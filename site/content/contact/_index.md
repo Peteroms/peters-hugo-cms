@@ -1,6 +1,6 @@
 ---
 title: Contact
-logo: /img/logo.svg
+logo: img/server6.jpeg
 contact_entries:
   - heading: Email
     text: omondipeter934@gmail.com
