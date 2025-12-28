@@ -1,6 +1,6 @@
 ---
 title: Contact
-logo: img/server6.jpeg
+logo: img/chatgpt-image-dec-28-2025-07_35_08-pm.png
 contact_entries:
   - heading: Email
     text: omondipeter934@gmail.com
