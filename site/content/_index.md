@@ -1,7 +1,6 @@
 ---
 title: AWS
-subtitle: On-demand cloud computing platform and APIs to individuals, companies,
-  and governments, on a metered, pay-as-you-go basis
+subtitle: Cloud Engineer
 image: img/server.jpg
 blurb:
   heading: Who is Peter Omondi?
@@ -22,11 +21,11 @@ products:
       cloud Infrastructure, both through the management console and IaC tools
       such us CloudFormation and Terraform. My expertise spans a wide range of
       AWS services.
-  - image: /img/illustrations-coffee-gear.svg
-    text: We offer a small, but carefully curated selection of brewing gear and
-      tools for every taste and experience level. No matter if you roast your
-      own beans or just bought your first french press, you’ll find a gadget to
-      fall in love with in our shop.
+  - image: img/servr2.png
+    text: I utilize Docker to create, deploy, and manage containerized applications
+      efficiently. I further enhance this efficiency by leveraging Amazon ECS
+      and Fargate to run containers in managed cloud environments, while
+      securely storing Docker images in Amazon Elastic Container Registry (ECR).
 values:
   heading: Why me?
   text: I value accountability, transparency, and ethical practice, ensuring
