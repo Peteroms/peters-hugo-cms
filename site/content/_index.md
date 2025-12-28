@@ -26,6 +26,12 @@ products:
       efficiently. I further enhance this efficiency by leveraging Amazon ECS
       and Fargate to run containers in managed cloud environments, while
       securely storing Docker images in Amazon Elastic Container Registry (ECR).
+  - text: I bridge the gap between development and operations by building robust
+      CI/CD pipelines, leveraging third-party tools like Jenkins Github-actions
+      and managed AWS services such as CodeDeploy, CodeBuild, and CodePipeline.
+      This approach ensures seamless integration, continuous delivery, and
+      efficient deployment of high-quality software.
+    image: img/server3.png
 values:
   heading: Why me?
   text: I value accountability, transparency, and ethical practice, ensuring
