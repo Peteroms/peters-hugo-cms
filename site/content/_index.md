@@ -15,10 +15,7 @@ blurb:
     next project.
 intro:
   heading: What we offer
-  text: Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone.
+  text: "I work on:"
 products:
   - image: img/server1.png
     text: With deep hands-on experience in AWS, I am comfortable in deploying AWS
