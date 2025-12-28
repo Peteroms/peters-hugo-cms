@@ -32,9 +32,10 @@ products:
       own beans or just bought your first french press, you’ll find a gadget to
       fall in love with in our shop.
 values:
-  heading: Our values
-  text: Coffee is an amazing part of human culture but it has a dark side too –
-    one of colonialism and mindless abuse of natural resources and human lives.
-    We want to turn this around and return the coffee trade to the drink’s
-    exhilarating, empowering and unifying nature.
+  heading: Why me?
+  text: I value accountability, transparency, and ethical practice, ensuring
+    systems are built and operated according to best standards. I also respect
+    collaboration, continuous improvement, and service excellence, believing
+    that trust, consistency, and professionalism are essential to delivering
+    dependable cloud and DevOps solutions.
 ---
