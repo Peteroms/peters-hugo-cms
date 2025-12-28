@@ -6,14 +6,7 @@ contact_entries:
     text: omondipeter934@gmail.com
   - heading: Telephone
     text: "+254728617735"
+  - heading: Address
+    text: Nairobi, Kenya
 ---
-
-We’d love to get in touch with you and hear your ideas and
-questions. We strive to grow and improve constantly and your feedback
-is valuable for us.
-
-<h3 class="f4 b lh-title mb2">How can I get…?</h3>
-
-You can also use the form below for any inquiries about coffee
-availability, monthly subscriptions and scheduling a 1-on-1 session
-with our baristas. Don’t be shy, drop us a line!
+If cloud computing excites you and you want to share insights or collaborate, I’d love to hear from you. Whether you’re a fellow enthusiast, a professional, or curious about the cloud, let’s connect and explore the endless possibilities together.
