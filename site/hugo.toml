@@ -1,8 +1,0 @@
-baseurl = "/"
-languageCode = "en-us"
-languageLang = "en"
-title = "Peteroms DevOps"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
-
-[params]
-images = ["img/chatgpt-image-dec-28-2025-07_35_08-pm.png"]

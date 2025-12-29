@@ -1,54 +1,77 @@
-# Hugo template for Decap CMS with Netlify Identity
+# Peteroms Dev - DevOps Portfolio
 
-This is a small business template built with [Hugo](https://gohugo.io) and [Decap CMS](https://github.com/decaporg/decap-cms), designed and developed by [Darin Dimitroff](https://twitter.com/deezel), [spacefarm.digital](https://www.spacefarm.digital).
+A professional portfolio website showcasing DevOps and Cloud Engineering expertise.
 
-## Getting started
+## Features
 
-Use our deploy button to get your own copy of the repository. 
+- **Home**: Introduction and overview of services
+- **Skillset**: Technical skills and expertise areas
+- **Projects**: Featured projects and case studies
+- **Blog**: Technical articles and insights
+- **Contact**: Professional contact information and form
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/decaporg/one-click-hugo-cms&stack=cms)
+## Technologies Used
 
-This will setup everything needed for running the CMS:
+- React 18
+- React Router
+- Modern CSS with responsive design
+- Professional UI/UX design
 
-* A new repository in your GitHub account with the code
-* Full Continuous Deployment to Netlify's global CDN network
-* Control users and access with Netlify Identity
-* Manage content with Decap CMS
+## Getting Started
 
-Once the initial build finishes, you can invite yourself as a user. Go to the Identity tab in your new site, click "Invite" and send yourself an invite.
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm
 
-Now you're all set, and you can start editing content!
+### Installation
 
-## Local Development
+1. Clone the repository
+```bash
+git clone https://github.com/Peteroms/peters-hugo-cms.git
+cd peters-hugo-cms
+```
 
-Clone this repository, and run `yarn` or `npm install` from the new folder to install all required dependencies.
+2. Install dependencies
+```bash
+npm install
+```
 
-Then start the development server with `yarn start` or `npm start`.
+3. Start the development server
+```bash
+npm start
+```
 
-## Testing
+The application will open in your browser at `http://localhost:3000`
 
-With the development server running, run the tests locally
-with `yarn cypress:run` or `npm run cypress:run`.
-Or use `yarn cypress:open` or `npm run cypress:open` to run interactively.
+### Build for Production
 
-Cypress tests also run on deploy with the [Cypress Netlify integration](https://www.netlify.com/integrations/cypress/).
+```bash
+npm run build
+```
 
-## Layouts
+This creates an optimized production build in the `build` folder.
 
-The template is based on small, content-agnostic partials that can be mixed and matched. The pre-built pages showcase just a few of the possible combinations. Refer to the `site/layouts/partials` folder for all available partials.
-
-Use Hugo’s `dict` functionality to feed content into partials and avoid repeating yourself and creating discrepancies.
-
-## CSS
-
-The template uses a custom fork of Tachyons and PostCSS with cssnext and cssnano. To customize the template for your brand, refer to `src/css/imports/_variables.css` where most of the important global variables like colors and spacing are stored.
-
-## SVG Social Icons
-
-The social media icons are in `site/assets/img`.
-Make sure you use consistent icons in terms of viewport and art direction for optimal results.
-For an icon named `icons-facebook.svg`, refer to the SVG `social-icon` partial like so:
+## Project Structure
 
 ```
-{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook" "alt" "Kaldi on Facebook") }}
+src/
+├── components/          # Reusable components
+│   ├── Navbar.js       # Navigation component
+│   ├── Footer.js       # Footer component
+│   └── *.css          # Component styles
+├── pages/              # Page components
+│   ├── Home.js         # Home page
+│   ├── Skillset.js     # Skills page
+│   ├── Projects.js     # Projects page
+│   ├── Blog.js         # Blog page
+│   └── Contact.js      # Contact page
+├── App.js              # Main app component
+├── App.css             # Global styles
+└── index.js            # Entry point
 ```
+
+## Contact
+
+Peter Omondi - omondipeter934@gmail.com
+
+Project Link: [https://github.com/Peteroms/peters-hugo-cms](https://github.com/Peteroms/peters-hugo-cms)

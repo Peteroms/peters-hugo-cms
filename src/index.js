@@ -1,16 +1,10 @@
-// JS Goes here - ES6 supported
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-import "./css/main.scss";
-
-const mobileMenu = document.querySelector("[data-mobile-menu]");
-const nav = document.querySelector("[data-nav]");
-
-function toggleMobileMenu() {
-  nav.classList.toggle("menu-open");
-}
-
-mobileMenu.addEventListener("click", toggleMobileMenu);
-
-// Say hello
-// eslint-disable-next-line no-console
-console.log("🦊 Hello! Edit me in src/index.js");
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
