@@ -8,5 +8,11 @@ contact_entries:
     text: "+254728617735"
   - heading: Address
     text: Nairobi, Kenya
+  - heading: LinkedIn
+    text: Connect with me on LinkedIn
+  - heading: GitHub
+    text: Check out my projects and contributions
 ---
-If cloud computing excites you and you want to share insights or collaborate, I’d love to hear from you. Whether you’re a fellow enthusiast, a professional, or curious about the cloud, let’s connect and explore the endless possibilities together.
+Ready to transform your infrastructure and accelerate your software delivery? I'm here to help you navigate your cloud and DevOps journey. Whether you need consultation on AWS architecture, CI/CD pipeline implementation, or Kubernetes deployment strategies, let's discuss how we can work together to achieve your goals.
+
+I'm always excited to connect with fellow cloud enthusiasts, DevOps practitioners, and organizations looking to modernize their technology stack. Reach out to explore collaboration opportunities or simply to share insights about the latest in cloud computing and automation.
