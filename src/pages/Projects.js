@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchProjects, urlFor } from '../lib/sanity';
 
 const Projects = () => {
-  const projects = [
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fallback static data
+  const staticProjects = [
     {
       title: "Multi-tier AWS Infrastructure",
       description: "Designed and deployed a scalable 3-tier architecture using Terraform, featuring auto-scaling groups, load balancers, RDS databases, and VPC networking. Implemented security best practices with IAM roles and security groups.",
@@ -24,6 +29,34 @@ const Projects = () => {
     }
   ];
 
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const sanityProjects = await fetchProjects();
+        if (sanityProjects && sanityProjects.length > 0) {
+          setProjects(sanityProjects);
+        } else {
+          setProjects(staticProjects);
+        }
+      } catch (error) {
+        console.log('Using static data:', error.message);
+        setProjects(staticProjects);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh'}}>
+        <div>Loading projects...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <section className="hero" style={{padding: '80px 0'}}>
@@ -37,30 +70,53 @@ const Projects = () => {
         <div className="container">
           <div className="grid">
             {projects.map((project, index) => (
-              <div key={index} className="card">
+              <div key={project._id || index} className="card">
+                {project.image && (
+                  <img 
+                    src={urlFor(project.image).width(400).height(200).url()} 
+                    alt={project.title}
+                    style={{width: '100%', height: '200px', objectFit: 'cover', borderRadius: '5px', marginBottom: '20px'}}
+                  />
+                )}
                 <h3>{project.title}</h3>
                 <p style={{marginBottom: '20px'}}>{project.description}</p>
-                <div>
-                  <strong style={{color: '#667eea'}}>Technologies:</strong>
-                  <div style={{marginTop: '10px'}}>
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex} 
-                        style={{
-                          display: 'inline-block',
-                          background: '#f1f3f4',
-                          padding: '4px 8px',
-                          margin: '2px',
-                          borderRadius: '4px',
-                          fontSize: '0.9rem',
-                          color: '#333'
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {project.technologies && (
+                  <div>
+                    <strong style={{color: '#667eea'}}>Technologies:</strong>
+                    <div style={{marginTop: '10px'}}>
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          style={{
+                            display: 'inline-block',
+                            background: '#f1f3f4',
+                            padding: '4px 8px',
+                            margin: '2px',
+                            borderRadius: '4px',
+                            fontSize: '0.9rem',
+                            color: '#333'
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
+                {(project.projectUrl || project.githubUrl) && (
+                  <div style={{marginTop: '20px', display: 'flex', gap: '10px'}}>
+                    {project.projectUrl && (
+                      <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" className="btn" style={{fontSize: '0.9rem', padding: '8px 16px'}}>
+                        View Project
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn" style={{fontSize: '0.9rem', padding: '8px 16px', background: '#333'}}>
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
