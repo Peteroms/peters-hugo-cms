@@ -39,6 +39,24 @@ main {
   color: white;
   text-align: center;
   padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -105,5 +123,20 @@ main {
   
   .grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hero .container > div {
+    flex-direction: column;
+    gap: 20px !important;
+  }
+  
+  .hero img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .section img {
+    width: 150px !important;
+    height: 150px !important;
   }
 }
