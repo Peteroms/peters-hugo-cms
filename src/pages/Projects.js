@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchProjects, urlFor } from '../lib/sanity';
+import architectureGif from '../assets/images/church_architecture.gif';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -7,6 +8,13 @@ const Projects = () => {
 
   // Fallback static data
   const staticProjects = [
+    {
+      title: "Serverless Web Application Architecture",
+      description: "Users access the application through a web browser, the domain name is first resolved by Amazon Route 53, which directs the request to an AWS Amplify–managed Amazon CloudFront distribution. CloudFront acts as a global CDN, serving the application from the nearest edge location for low latency and high availability. The frontend is built and deployed automatically through a GitHub-integrated CI/CD pipeline in AWS Amplify, and the resulting static assets are hosted by Amplify Hosting. The React frontend is then loaded in the user's browser, and any dynamic operations, such as form submissions or payment requests, are sent to Amazon API Gateway, which invokes AWS Lambda functions to process the logic, store data in Amazon DynamoDB, and integrate with M-Pesa for payment processing. This architecture provides a fully serverless, scalable, and secure web application.",
+      technologies: ["AWS Amplify", "CloudFront", "Route 53", "API Gateway", "Lambda", "DynamoDB", "React", "M-Pesa Integration"],
+      image: architectureGif,
+      projectUrl: "https://medium.com/@peteroms/how-i-built-a-serveless-web-application-with-react-and-an-aws-backend-integrating-a-payment-b7cf19dcd8d4?postPublishedType=repub"
+    },
     {
       title: "Multi-tier AWS Infrastructure",
       description: "Designed and deployed a scalable 3-tier architecture using Terraform, featuring auto-scaling groups, load balancers, RDS databases, and VPC networking. Implemented security best practices with IAM roles and security groups.",
@@ -46,7 +54,17 @@ const Projects = () => {
       }
     };
 
+    // Set timeout to show static data quickly if Sanity is slow
+    const timeoutId = setTimeout(() => {
+      if (loading) {
+        setProjects(staticProjects);
+        setLoading(false);
+      }
+    }, 1000);
+
     loadProjects();
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (loading) {
@@ -71,9 +89,9 @@ const Projects = () => {
           <div className="grid">
             {projects.map((project, index) => (
               <div key={project._id || index} className="card">
-                {project.image && (
+                {(project.image || project.image) && (
                   <img 
-                    src={urlFor(project.image).width(400).height(200).url()} 
+                    src={project.image && typeof project.image === 'string' ? project.image : project.image ? urlFor(project.image).width(400).height(200).url() : null}
                     alt={project.title}
                     style={{width: '100%', height: '200px', objectFit: 'cover', borderRadius: '5px', marginBottom: '20px'}}
                   />
@@ -104,10 +122,10 @@ const Projects = () => {
                   </div>
                 )}
                 {(project.projectUrl || project.githubUrl) && (
-                  <div style={{marginTop: '20px', display: 'flex', gap: '10px'}}>
+                  <div style={{marginTop: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
                     {project.projectUrl && (
                       <a href={project.projectUrl} target="_blank" rel="noopener noreferrer" className="btn" style={{fontSize: '0.9rem', padding: '8px 16px'}}>
-                        View Project
+                        {project.title === "Serverless Web Application Architecture" ? "Read More" : "View Project"}
                       </a>
                     )}
                     {project.githubUrl && (

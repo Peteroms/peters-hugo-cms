@@ -44,7 +44,17 @@ const Blog = () => {
       }
     };
 
+    // Set timeout to show static data quickly if Sanity is slow
+    const timeoutId = setTimeout(() => {
+      if (loading) {
+        setPosts(staticPosts);
+        setLoading(false);
+      }
+    }, 1000);
+
     loadPosts();
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   const formatDate = (dateString) => {

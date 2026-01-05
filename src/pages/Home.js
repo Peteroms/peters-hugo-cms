@@ -53,8 +53,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="section" style={{background: '#f8f9fa', position: 'relative', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(248, 249, 250, 0.9)', zIndex: 1}}></div>
+      <section className="section" style={{background: 'linear-gradient(135deg, #b8d4b8 0%, #d4e6d4 100%)', position: 'relative', backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(184, 212, 184, 0.9)', zIndex: 1}}></div>
         <div className="container" style={{position: 'relative', zIndex: 2}}>
           <h2 style={{textAlign: 'center', marginBottom: '30px', fontSize: '2.5rem', color: '#333'}}>Why Choose Me?</h2>
           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: '40px', marginBottom: '30px', flexWrap: 'wrap'}}>
@@ -62,10 +62,11 @@ const Home = () => {
               src={image2} 
               alt="Professional work" 
               style={{
-                width: '200px',
-                height: '200px',
+                width: '280px',
+                height: '280px',
                 borderRadius: '10px',
                 objectFit: 'cover',
+                objectPosition: 'center top',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                 zIndex: 3
               }}
@@ -74,8 +75,8 @@ const Home = () => {
               src={image3} 
               alt="Technical expertise" 
               style={{
-                width: '200px',
-                height: '200px',
+                width: '280px',
+                height: '280px',
                 borderRadius: '10px',
                 objectFit: 'cover',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.2)',

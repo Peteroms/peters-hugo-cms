@@ -51,7 +51,17 @@ const Skillset = () => {
       }
     };
 
+    // Set timeout to show static data quickly if Sanity is slow
+    const timeoutId = setTimeout(() => {
+      if (loading) {
+        setSkills(staticSkills);
+        setLoading(false);
+      }
+    }, 1000);
+
     loadSkills();
+    
+    return () => clearTimeout(timeoutId);
   }, []);
 
   if (loading) {
